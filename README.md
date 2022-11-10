@@ -1,0 +1,1 @@
+# inernet_shop_test
