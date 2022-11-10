@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<body>
+<div th:insert="navbar :: navbar"></div>
+
+
+<h2>All products</h2>
+<br/>
+<div>
+    <table width="300px" border="1">
+        <thead>
+        <tr>
+            <th>product</th>
+            <th>available</th>
+            <th>cost</th>
+            <th>category</th>
+            <th>operations</th>
+        </tr>
+        </thead>
+        <tbody align="center">
+        <tr th:each="product : ${allProducts}">
+            <td th:text="${product.productName}"></td>
+            <td th:text="${product.unitsInStock}"></td>
+            <td th:text="${product.unitPrice}"></td>
+            <td th:text="${product.getCategory().getCategoryName()}"></td>
+            <td>
+                <form th:action="@{update-product}">
+                    <input type="hidden" name="id" th:value="${product.id}">
+                    <button type="submit" value="update">update</button>
+                </form>
+                <form th:action="@{delete-product}">
+                    <input type="hidden" name="id" th:value="${product.id}">
+                    <button type="submit" value="delete">delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+<input type="button" value="add product"
+       onclick="window.location.href='add-product'">
+</body>
+</html>

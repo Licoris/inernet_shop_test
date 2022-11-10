@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Customer</title>
+</head>
+<body>
+<div>
+    <h2>Customer Registration</h2>
+    <form th:action="@{save-customer}" th:object="${customer}" method="post">
+
+        <input type="hidden" th:field="*{id}">
+        <div>
+            <label>Name:</label>
+            <input type="text" th:field="*{name}">
+            <p th:each="err : ${#fields.errors('name')}" th:text="${err}"></p>
+        </div>
+        <br/>
+        <div>
+            <label>Surname:</label>
+            <input type="text" th:field="*{surname}">
+            <p th:each="err : ${#fields.errors('surname')}" th:text="${err}"></p>
+        </div>
+        <br/>
+        <div>
+            <label>Address:</label>
+            <input type="text" th:field="*{address}">
+            <p th:each="err : ${#fields.errors('address')}" th:text="${err}"></p>
+        </div>
+        <br>
+        <div>
+            <label>Phone:</label>
+            <input type="text" th:field="*{phone}">
+            <p th:each="err : ${#fields.errors('phone')}" th:text="${err}"></p>
+        </div>
+        <br/>
+        <input type="button" value="Cancel"
+               onclick="window.location.href='show-customers'">
+        <button type="submit">Save</button>
+    </form>
+</div>
+</body>
+</html>

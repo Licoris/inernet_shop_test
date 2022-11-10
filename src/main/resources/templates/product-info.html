@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product</title>
+</head>
+<body>
+<div>
+    <h2>Product Registration</h2>
+    <form th:action="@{save-product}" th:object="${product}" method="post">
+
+        <input type="hidden" th:field="*{id}">
+        <div>
+            <label>Product name:</label>
+            <input type="text" th:field="*{productName}">
+            <p th:each="err : ${#fields.errors('productName')}" th:text="${err}"></p>
+        </div>
+        <br/>
+        <div>
+            <label>Units in stock:</label>
+            <input type="number" th:field="*{unitsInStock}">
+            <p th:each="err : ${#fields.errors('unitsInStock')}" th:text="${err}"></p>
+        </div>
+        <br/>
+        <div>
+            <label>Unit price:</label>
+            <input type="number" th:field="*{unitPrice}">
+            <p th:each="err : ${#fields.errors('unitPrice')}" th:text="${err}"></p>
+        </div>
+        <br/>
+        <div>
+            <label>Category:</label>
+            <select name="category">
+                <option th:each="category:${allCategories}"
+                        th:value="${category.id}"
+                        th:text="${category.categoryName}">
+            </select>
+            <p th:each="err : ${#fields.errors('category')}" th:text="${err}"></p>
+        </div>
+
+        <br/>
+        <input type="button" value="Cancel"
+               onclick="window.location.href='show-products'">
+        <button type="submit">Save</button>
+    </form>
+</div>
+</body>
+</html>

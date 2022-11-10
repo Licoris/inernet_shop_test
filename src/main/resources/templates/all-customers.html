@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<body>
+<div th:insert="navbar :: navbar">  </div>
+
+<h2>All customers</h2>
+<br/>
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Operations</th>
+        </tr>
+        </thead>
+        <tbody align="center">
+        <tr th:each="cust : ${allCustomers}">
+            <td th:text="${cust.name}"></td>
+            <td th:text="${cust.surname}"></td>
+            <td th:text="${cust.address}"></td>
+            <td th:text="${cust.phone}"></td>
+            <td>
+                <form th:action="@{update-customer}">
+                    <input type="hidden" name="id" th:value="${cust.id}">
+                    <button type="submit" value="update">update</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <input type="button" value="add-customer" onclick="window.location.href='add-customer'">
+</div>
+</body>
+</html>
