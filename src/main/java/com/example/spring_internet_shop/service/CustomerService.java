@@ -1,6 +1,6 @@
 package com.example.spring_internet_shop.service;
 
-import com.example.spring_internet_shop.entity.Customer;
+import com.example.spring_internet_shop.model.Customer;
 
 import java.util.List;
 

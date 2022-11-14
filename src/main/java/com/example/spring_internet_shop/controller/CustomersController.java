@@ -1,6 +1,6 @@
 package com.example.spring_internet_shop.controller;
 
-import com.example.spring_internet_shop.entity.Customer;
+import com.example.spring_internet_shop.model.Customer;
 import com.example.spring_internet_shop.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

@@ -1,6 +1,6 @@
 package com.example.spring_internet_shop.service;
 
-import com.example.spring_internet_shop.entity.Category;
+import com.example.spring_internet_shop.model.Category;
 import com.example.spring_internet_shop.exception.BadRequestException;
 import com.example.spring_internet_shop.exception.ResourceNotFoundException;
 import com.example.spring_internet_shop.repository.CategoryRepository;

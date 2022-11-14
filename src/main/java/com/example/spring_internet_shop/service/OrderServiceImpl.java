@@ -1,8 +1,8 @@
 package com.example.spring_internet_shop.service;
 
-import com.example.spring_internet_shop.entity.Order;
-import com.example.spring_internet_shop.entity.OrderItem;
-import com.example.spring_internet_shop.entity.Product;
+import com.example.spring_internet_shop.model.Order;
+import com.example.spring_internet_shop.model.OrderItem;
+import com.example.spring_internet_shop.model.Product;
 import com.example.spring_internet_shop.exception.BadRequestException;
 import com.example.spring_internet_shop.exception.ResourceNotFoundException;
 import com.example.spring_internet_shop.repository.OrderRepository;

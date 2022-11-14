@@ -1,4 +1,4 @@
-package com.example.spring_internet_shop.entity;
+package com.example.spring_internet_shop.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;

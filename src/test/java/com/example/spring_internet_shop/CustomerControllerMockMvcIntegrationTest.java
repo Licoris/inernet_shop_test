@@ -1,6 +1,6 @@
 package com.example.spring_internet_shop;
 
-import com.example.spring_internet_shop.entity.Customer;
+import com.example.spring_internet_shop.model.Customer;
 import com.example.spring_internet_shop.repository.CustomerRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;

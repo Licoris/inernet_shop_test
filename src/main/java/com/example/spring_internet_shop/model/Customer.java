@@ -1,7 +1,6 @@
-package com.example.spring_internet_shop.entity;
+package com.example.spring_internet_shop.model;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;

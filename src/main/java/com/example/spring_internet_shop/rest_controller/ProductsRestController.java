@@ -1,7 +1,7 @@
 package com.example.spring_internet_shop.rest_controller;
 
 
-import com.example.spring_internet_shop.entity.Product;
+import com.example.spring_internet_shop.model.Product;
 import com.example.spring_internet_shop.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

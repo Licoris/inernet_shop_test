@@ -1,7 +1,7 @@
 package com.example.spring_internet_shop.controller;
 
-import com.example.spring_internet_shop.entity.Category;
-import com.example.spring_internet_shop.entity.Product;
+import com.example.spring_internet_shop.model.Category;
+import com.example.spring_internet_shop.model.Product;
 import com.example.spring_internet_shop.service.CategoryService;
 import com.example.spring_internet_shop.service.ProductService;
 import lombok.RequiredArgsConstructor;
