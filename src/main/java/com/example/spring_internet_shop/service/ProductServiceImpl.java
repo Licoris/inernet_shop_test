@@ -7,11 +7,13 @@ import com.example.spring_internet_shop.exception.ResourceNotFoundException;
 import com.example.spring_internet_shop.repository.ProductRepository;
 import com.example.spring_internet_shop.service.enums.ErrorsMessageEnum;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Log4j2
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
@@ -25,7 +27,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product get(Long id) {
-
         return productRepository
                 .findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException(ErrorsMessageEnum.NOT_FOUND.getMessage()));
