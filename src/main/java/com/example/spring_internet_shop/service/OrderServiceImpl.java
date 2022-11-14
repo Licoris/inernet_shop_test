@@ -6,9 +6,11 @@ import com.example.spring_internet_shop.entity.Product;
 import com.example.spring_internet_shop.exception.BadRequestException;
 import com.example.spring_internet_shop.exception.ResourceNotFoundException;
 import com.example.spring_internet_shop.repository.OrderRepository;
-import com.example.spring_internet_shop.repository.ProductRepository;
 import com.example.spring_internet_shop.service.enums.ErrorsMessageEnum;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,9 +23,10 @@ import static java.util.Optional.ofNullable;
 
 @Service
 @RequiredArgsConstructor
+@Log4j2
 public class OrderServiceImpl implements OrderService {
     private final OrderRepository orderRepository;
-    private final ProductRepository productRepository;
+    private final Logger orderLogger = LogManager.getLogger("orderLogger");
 
     @Override
     public List<Order> getAll() {
@@ -56,8 +59,9 @@ public class OrderServiceImpl implements OrderService {
         var order = orderRepository
                 .findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException(ErrorsMessageEnum.NOT_FOUND.getMessage()));
-
+        orderLogger.warn("User {} is completing a order {}", order.getCustomer().getId(), id);
         completeOrder(order);
+        orderLogger.warn("Order {} completed", id);
     }
 
 
