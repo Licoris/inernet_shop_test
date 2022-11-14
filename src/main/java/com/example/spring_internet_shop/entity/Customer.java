@@ -10,7 +10,6 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "customers")
 @Data
-@NoArgsConstructor
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,11 +31,4 @@ public class Customer {
     @Pattern(regexp = "^\\d{10}$", message = "phone must contain 10 numbers")
     @Column(name = "phone")
     private String phone;
-
-    public Customer(String name, String surname, String address, String phone) {
-        this.name = name;
-        this.surname = surname;
-        this.address = address;
-        this.phone = phone;
-    }
 }
